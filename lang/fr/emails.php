@@ -1,0 +1,60 @@
+<?php
+
+return [
+    // Contact Email
+    'contact_subject' => 'Nouvelle soumission du formulaire de contact',
+    'contact_title' => 'Nouvelle soumission du formulaire de contact',
+    'contact_intro' => 'Vous avez reçu un nouveau message depuis le formulaire de contact de votre site web.',
+    'contact_info_title' => 'Informations de contact',
+    'contact_name' => 'Nom',
+    'contact_email' => 'E-mail',
+    'contact_phone' => 'Téléphone',
+    'contact_service' => 'Service',
+    'contact_message_title' => 'Message',
+    'contact_no_message' => 'Aucun message fourni',
+    'contact_note' => '<strong>Note :</strong> Vous pouvez répondre directement à cet e-mail pour répondre à :name.',
+    'contact_footer_automated' => 'Ceci est une notification automatique de votre formulaire de contact.',
+    
+    // Order Confirmation Email
+    'order_confirmation_subject' => 'Confirmation de commande - Commande #:order_id',
+    'order_confirmation_title' => 'Merci pour votre commande!',
+    'order_confirmation_greeting' => 'Cher(e) :name,',
+    'order_confirmation_intro' => 'Merci pour votre commande. Nous avons reçu votre paiement et votre commande est en cours de traitement.',
+    'order_info_title' => 'Informations de commande',
+    'order_id' => 'N° de commande',
+    'order_date' => 'Date de commande',
+    'payment_status' => 'Statut du paiement',
+    'transaction_id' => 'N° de transaction',
+    'customer_info_title' => 'Informations client',
+    'customer_name' => 'Nom',
+    'customer_email' => 'E-mail',
+    'customer_phone' => 'Téléphone',
+    'customer_company' => 'Entreprise',
+    'customer_address' => 'Adresse',
+    'order_items_title' => 'Articles commandés',
+    'item' => 'Article',
+    'type' => 'Type',
+    'quantity' => 'Quantité',
+    'price' => 'Prix',
+    'total' => 'Total',
+    'notes_title' => 'Notes',
+    'order_confirmation_closing' => 'Si vous avez des questions concernant votre commande, n\'hésitez pas à nous contacter.',
+    'best_regards' => 'Cordialement,',
+    'team' => 'L\'équipe :app_name',
+    'automated_email' => 'Ceci est un e-mail automatique. Veuillez ne pas répondre à ce message.',
+    
+    // New Order Notification Email
+    'new_order_subject' => 'Nouvelle commande reçue - Commande #:order_id',
+    'new_order_title' => 'Nouvelle commande reçue!',
+    'action_required' => '<strong>Action requise :</strong> Une nouvelle commande a été passée et nécessite votre attention.',
+    'order_summary_title' => 'Résumé de la commande',
+    'total_amount' => 'Montant total',
+    'payment_gateway' => 'Passerelle de paiement',
+    'customer_notes_title' => 'Notes du client',
+    'admin_login_prompt' => 'Veuillez vous connecter au panneau d\'administration pour traiter cette commande.',
+    'automated_notification' => 'Ceci est une notification automatique de votre système de gestion des commandes.',
+    
+    // Common
+    'all_rights_reserved' => '&copy; :year :app_name. Tous droits réservés.',
+    'account_request_subject' => 'Nouvelle demande client',
+];

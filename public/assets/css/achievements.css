@@ -1,0 +1,49 @@
+/* Achievements Page Styles */
+
+/* Client Logo Wrapper */
+.client-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-height: 120px;
+}
+
+.client-logo-wrapper:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Client Logo Styles */
+.client-logo {
+    max-width: 100%;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    height: 220px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Link wrapper for client logos */
+.client-logo-wrapper a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .client-logo-wrapper {
+        padding: 15px;
+        min-height: 100px;
+    }
+}

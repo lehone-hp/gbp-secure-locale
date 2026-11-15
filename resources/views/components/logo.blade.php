@@ -1,0 +1,18 @@
+@props(['size' => 40])
+
+@php($pin = 'pin-' . \Illuminate\Support\Str::random(6))
+
+<span {{ $attributes->class('brand-logo') }}>
+	<svg width="{{ $size }}" height="{{ $size }}" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+		<defs><clipPath id="{{ $pin }}"><path d="M32 4C19.3 4 9 14.1 9 26.6c0 15.9 17 29.9 21.8 33.6a2 2 0 0 0 2.4 0C38 56.5 55 42.5 55 26.6 55 14.1 44.7 4 32 4Z"/></clipPath></defs>
+		<g clip-path="url(#{{ $pin }})">
+			<rect x="0" y="26.6" width="32.4" height="38" fill="#FBBC05"/>
+			<rect x="31.6" y="26.6" width="33" height="38" fill="#34A853"/>
+			<rect x="0" y="0" width="32.4" height="27" fill="#EA4335"/>
+			<rect x="31.6" y="0" width="33" height="27" fill="#4285F4"/>
+		</g>
+		<path d="M32 13.5 43 17.8V27c0 7-4.5 11.6-11 14.2C25.5 38.6 21 34 21 27v-9.2Z" fill="#FFFFFF"/>
+		<path d="m26.8 27.4 3.6 3.6 7-7.6" fill="none" stroke="#794AFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+	<span class="brand-logo__text"><strong>GBP</strong> Secure Local</span>
+</span>

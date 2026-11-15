@@ -1,0 +1,60 @@
+<?php
+
+return [
+    // Contact Email
+    'contact_subject' => 'New Contact Form Submission',
+    'contact_title' => 'New Contact Form Submission',
+    'contact_intro' => 'You have received a new message from your website contact form.',
+    'contact_info_title' => 'Contact Information',
+    'contact_name' => 'Name',
+    'contact_email' => 'Email',
+    'contact_phone' => 'Phone',
+    'contact_service' => 'Service',
+    'contact_message_title' => 'Message',
+    'contact_no_message' => 'No message provided',
+    'contact_note' => '<strong>Note:</strong> You can reply directly to this email to respond to :name.',
+    'contact_footer_automated' => 'This is an automated notification from your contact form.',
+    
+    // Order Confirmation Email
+    'order_confirmation_subject' => 'Order Confirmation - Order #:order_id',
+    'order_confirmation_title' => 'Thank You for Your Order!',
+    'order_confirmation_greeting' => 'Dear :name,',
+    'order_confirmation_intro' => 'Thank you for your order. We have received your payment and your order is being processed.',
+    'order_info_title' => 'Order Information',
+    'order_id' => 'Order ID',
+    'order_date' => 'Order Date',
+    'payment_status' => 'Payment Status',
+    'transaction_id' => 'Transaction ID',
+    'customer_info_title' => 'Customer Information',
+    'customer_name' => 'Name',
+    'customer_email' => 'Email',
+    'customer_phone' => 'Phone',
+    'customer_company' => 'Company',
+    'customer_address' => 'Address',
+    'order_items_title' => 'Order Items',
+    'item' => 'Item',
+    'type' => 'Type',
+    'quantity' => 'Quantity',
+    'price' => 'Price',
+    'total' => 'Total',
+    'notes_title' => 'Notes',
+    'order_confirmation_closing' => 'If you have any questions about your order, please don\'t hesitate to contact us.',
+    'best_regards' => 'Best regards,',
+    'team' => ':app_name Team',
+    'automated_email' => 'This is an automated email. Please do not reply to this message.',
+    
+    // New Order Notification Email
+    'new_order_subject' => 'New Order Received - Order #:order_id',
+    'new_order_title' => 'New Order Received!',
+    'action_required' => '<strong>Action Required:</strong> A new order has been placed and requires your attention.',
+    'order_summary_title' => 'Order Summary',
+    'total_amount' => 'Total Amount',
+    'payment_gateway' => 'Payment Gateway',
+    'customer_notes_title' => 'Customer Notes',
+    'admin_login_prompt' => 'Please log in to the admin panel to process this order.',
+    'automated_notification' => 'This is an automated notification from your order management system.',
+    
+    // Common
+    'all_rights_reserved' => '&copy; :year :app_name. All rights reserved.',
+    'account_request_subject' => 'New customer request',
+];
