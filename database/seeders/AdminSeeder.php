@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
 
         User::create([
             'name'      => 'System Admin',
-            'email'     => 'admin@conformitegbp.com',
+            'email'     => 'admin@gbp-securelocal.com',
             'password'  => Hash::make('password'),
             'role'      => User::ROLE_ADMIN
         ]);

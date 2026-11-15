@@ -202,7 +202,7 @@ server {
     listen 80;
     server_name domain1.com domain2.com domain3.com;
     
-    root /path/to/conformitegbp.com/public;
+    root /path/to/gbp-securelocal.com/public;
     index index.php;
     
     location / {

@@ -12,7 +12,7 @@
                     +1 450 914 1568 (Canada) &nbsp;·&nbsp; +33 9 74 37 74 21 (France)
                 </p>
                 <p style="margin: 0; font-size: 12px; color: #696687;">
-                    <a href="mailto:info@map-gestion.com" style="color: #6254e7; text-decoration: none;">info@map-gestion.com</a>
+                    <a href="mailto:info@gbp-securelocal.com" style="color: #6254e7; text-decoration: none;">info@gbp-securelocal.com</a>
                     &nbsp;·&nbsp;
                     <span style="color: #9b99b0;">GBP Secure Local</span>
                 </p>

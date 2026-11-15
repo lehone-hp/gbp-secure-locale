@@ -15,17 +15,17 @@ class TenantConfigSeeder extends Seeder
     {
         $tenants = [
             [
-                'domain' => 'conformitegmb.com',
+                'domain' => 'gbp-securelocal.com',
                 'payment_gateway' => Order::PAYMENT_GATEWAY_STRIPE,
                 'is_active' => true,
             ],
             [
-                'domain' => 'conformitegmb.net',
-                'payment_gateway' => Order::PAYMENT_GATEWAY_BRAINTREE,
+                'domain' => 'gbp-securelocal.net',
+                'payment_gateway' => Order::PAYMENT_GATEWAY_SQUARE,
                 'is_active' => true,
             ],
             [
-                'domain' => 'conformitegmb.org',
+                'domain' => 'gbp-securelocal.org',
                 'payment_gateway' => Order::PAYMENT_GATEWAY_PAYPAL,
                 'is_active' => true,
             ],

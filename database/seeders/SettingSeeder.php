@@ -18,15 +18,15 @@ class SettingSeeder extends Seeder
         }
 
         settings()->set([
-            'app_name' => 'Conformite GBP',
+            'app_name' => 'GBP Secure Local',
 
-            'contact_email'   => 'support@conformitegbp.com',
-            'contact_email_2' => 'info@conformitegbp.com',
+            'contact_email'   => 'support@gbp-securelocal.com',
+            'contact_email_2' => 'info@gbp-securelocal.com',
             'contact_phone'   => '(237) 123-456-789',
             'contact_phone_2' => '(237) 123-456-789',
 
-            'notify_email'   => 'contact@conformitegbp.com',
-            'notify_email_2' => 'contact@conformitegbp.com',
+            'notify_email'   => 'contact@gbp-securelocal.com',
+            'notify_email_2' => 'contact@gbp-securelocal.com',
 
             'work_hours'        => 'Mon-Fri | 9AM - 5PM',
             'address'           => 'Fk Street, PV, Cameroon',
