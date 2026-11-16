@@ -580,3 +580,20 @@ select.form-control {
 
 /* Preloader must sit above Bootstrap sticky/fixed layers (sticky-top is 1020) */
 .preloader{z-index:9999}
+
+/* Centered, single-column checkout */
+.checkout-step{font-size:14px;font-weight:600;color:var(--text-color);text-transform:uppercase;letter-spacing:.06em}
+.checkout-column .order-summary-card{padding:28px!important}
+.checkout-recap{border-top:1px solid var(--divider-color);padding-top:16px}
+.checkout-payment{padding:30px}
+@media (max-width:575px){.checkout-column .order-summary-card,.checkout-payment,.checkout-column .customer-info{padding:20px!important}}
+
+/* Checkout step indicator */
+.checkout-steps{display:flex;justify-content:center;gap:12px;list-style:none;margin:0 0 28px;padding:0}
+.checkout-steps li{display:flex;align-items:center;gap:10px;color:var(--text-color);font-size:14px;font-weight:600}
+.checkout-steps li+li::before{content:"";width:36px;height:2px;background:var(--divider-color);margin-right:2px}
+.checkout-steps__num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:2px solid var(--divider-color);font-size:13px}
+.checkout-steps .is-active{color:var(--primary-color)}
+.checkout-steps .is-active .checkout-steps__num{background:var(--accent-color);border-color:var(--accent-color);color:#fff}
+.checkout-steps .is-done .checkout-steps__num{background:#34A853;border-color:#34A853;color:#fff}
+@media (max-width:575px){.checkout-steps{gap:8px}.checkout-steps li+li::before{width:16px}.checkout-steps__label{font-size:13px}}

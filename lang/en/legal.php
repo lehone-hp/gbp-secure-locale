@@ -146,6 +146,7 @@ return [
         <p>Your order is a distance contract. We give you the required information before payment and confirm it afterwards. Your rights under Quebec law and the equivalent laws of other provinces are not affected.</p>
         <h3>European Union (consumers)</h3>
         <p>You have a 14-day right of withdrawal under Directive 2011/83/EU. If you asked for the service to begin during that period, you pay for the portion already provided. For subscriptions, withdrawal applies to the initial subscription and can be made by a clear written statement.</p>
+        <p>Where the customer expressly requests that performance commence within this period, they must, in the event of withdrawal, pay the proportionate value of the service already provided. They acknowledge that they forfeit their right of withdrawal once the service has been fully performed, subject to the applicable legal conditions.</p>
         <h3>United States</h3>
         <p>Any automatic renewal is disclosed before payment and requires your acceptance. You can cancel online or by email at any time, effective at the end of the paid period. Rights granted by your state law remain in force.</p>
 

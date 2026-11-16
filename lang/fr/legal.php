@@ -146,6 +146,7 @@ return [
         <p>Votre commande est un contrat à distance. Nous vous fournissons les renseignements requis avant le paiement et les confirmons ensuite. Vos droits en vertu de la loi québécoise et des lois équivalentes des autres provinces demeurent intacts.</p>
         <h3>Union européenne (consommateurs)</h3>
         <p>Vous disposez d\'un droit de rétractation de 14 jours en vertu de la directive 2011/83/UE. Si vous avez demandé que le service commence pendant ce délai, vous payez la part déjà fournie. Pour les abonnements, la rétractation vise l\'abonnement initial et peut être exercée par une déclaration écrite claire.</p>
+        <p>Lorsque le client demande expressément que l\'exécution commence pendant ce délai, il doit, en cas de rétractation, payer la valeur proportionnelle du service déjà fourni. Il reconnaît perdre son droit de rétractation une fois le service entièrement exécuté, sous réserve des conditions légales applicables.</p>
         <h3>États-Unis</h3>
         <p>Tout renouvellement automatique est indiqué avant le paiement et requiert votre acceptation. Vous pouvez résilier en ligne ou par courriel en tout temps, avec effet à la fin de la période payée. Les droits prévus par la loi de votre État demeurent applicables.</p>
 

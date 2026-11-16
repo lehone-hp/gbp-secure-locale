@@ -42,29 +42,13 @@
 				<input type="hidden" name="payment_source_id" id="payment-source-id">
 				<input type="hidden" name="verification_token" id="verification-token">
 
-				<div class="row justify-content-between">
-					<!-- Left Column: customer details -->
-						<div class="col-lg-7 mb-5">
-							<p class="text-muted mb-2">{{ __('checkout.step_of', ['current' => 2, 'total' => 2]) }} · {{ __('checkout.step_payment') }}</p>
-							<div class="d-flex justify-content-between align-items-center mb-3">
-								<h4 class="mb-0">{{ __('checkout.customer_info') }}</h4>
-								<a href="{{ $editUrl }}">{{ __('checkout.edit_details') }}</a>
-							</div>
-							<address class="mb-0">
-								<strong>{{ $order->customer_full_name }}</strong><br>
-								{{ $order->customer_email }} · {{ $order->customer_phone }}<br>
-								@if($order->customer_company){{ $order->customer_company }}<br>@endif
-								{{ $order->address_line_1 }}@if($order->address_line_2), {{ $order->address_line_2 }}@endif<br>
-								{{ $order->postal_code }} {{ $order->city }}, {{ $order->state }}, {{ $order->country }}
-							</address>
-						</div>
+				<div class="row justify-content-center">
+					<div class="col-lg-8 col-xl-7 checkout-column">
+						@include('web.services.partials.checkout-steps', ['current' => 2])
+						<div class="order-summary-card p-4 mb-4">
+							<h4 class="mb-3">{{ __('checkout.order_summary') }}</h4>
 
-						<!-- Right Column: Order Summary -->
-					<div class="col-lg-5 col-xl-4">
-						<div class="order-summary-card bg-light p-4 sticky-top" style="top: 120px;">
-							<h4 class="mb-4">{{ __('checkout.order_summary') }}</h4>
-
-							<table class="table order-summary-table mb-4">
+							<table class="table order-summary-table mb-3">
 								<thead>
 									<tr>
 										<th>{{ __('checkout.item') }}</th>
@@ -87,6 +71,16 @@
 								</tfoot>
 							</table>
 
+							<div class="checkout-recap d-flex justify-content-between align-items-start gap-3">
+								<address class="mb-0 small">
+									<strong>{{ $order->customer_full_name }}</strong> · {{ $order->customer_email }}<br>
+									{{ $order->address_line_1 }}@if($order->address_line_2), {{ $order->address_line_2 }}@endif, {{ $order->postal_code }} {{ $order->city }}, {{ $order->country }}
+								</address>
+								<a href="{{ $editUrl }}" class="small text-nowrap">{{ __('checkout.edit_details') }}</a>
+							</div>
+						</div>
+
+						<div class="customer-info checkout-payment">
 							<!-- Payment UI Container -->
 							<div id="payment-container" class="mb-4">
 								@if($paymentGateway === 'payunit')
@@ -207,6 +201,20 @@
 			</form>
 		</div>
 	</div>
+
+	@push('scripts')
+	<script>
+		// Bring the payment form into view when step 2 loads
+		window.addEventListener('load', function () {
+			var target = document.querySelector('.checkout-payment');
+			if (!target) { return; }
+			setTimeout(function () {
+				var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+				window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+			}, 400);
+		});
+	</script>
+	@endpush
 
 	@push('styles')
 	@if($paymentGateway === 'stripe')

@@ -38,9 +38,25 @@
 				@csrf
 				<input type="hidden" name="addon_id" value="{{ $addon->id }}">
 
-				<div class="row justify-content-between">
-					<div class="col-lg-7 mb-5">
-						<p class="text-muted mb-2">{{ __('checkout.step_of', ['current' => 1, 'total' => 2]) }} · {{ __('checkout.step_details') }}</p>
+				<div class="row justify-content-center">
+					<div class="col-lg-8 col-xl-7 checkout-column">
+						@include('web.services.partials.checkout-steps', ['current' => 1])
+						<div class="order-summary-card p-4 mb-4">
+							<h4 class="mb-3">{{ __('checkout.selected_item') }}</h4>
+							<p class="text-muted mb-1">{{ $addon->service->name }}</p>
+							<div class="d-flex justify-content-between align-items-start">
+								<strong>{{ $addon->name }} <small class="text-muted">({{ $addon->getPricingOption() }})</small></strong>
+								<span class="fw-bold">{{ money($chargePrice, $chargeCurrency) }}</span>
+							</div>
+							<hr>
+							<div class="d-flex justify-content-between">
+								<strong>{{ __('checkout.total') }}</strong>
+								<strong>{{ money($chargePrice, $chargeCurrency) }} {{ $chargeCurrency }}</strong>
+							</div>
+							@if($currencyFallback)
+								<p class="small text-muted mt-3 mb-0">{{ __('checkout.currency_fallback', ['selected' => app(\App\Services\CurrencyManager::class)->current(), 'currency' => $chargeCurrency]) }}</p>
+							@endif
+						</div>
 						<div class="customer-info">
 						<h4 class="mb-4">{{ __('checkout.customer_info') }}</h4>
 
@@ -208,24 +224,6 @@
 						</button>
 					</div>
 
-					<div class="col-lg-5 col-xl-4">
-						<div class="order-summary-card bg-light p-4 sticky-top" style="top: 120px;">
-							<h4 class="mb-4">{{ __('checkout.selected_item') }}</h4>
-							<p class="text-muted mb-1">{{ $addon->service->name }}</p>
-							<div class="d-flex justify-content-between align-items-start">
-								<strong>{{ $addon->name }} <small class="text-muted">({{ $addon->getPricingOption() }})</small></strong>
-								<span class="fw-bold">{{ money($chargePrice, $chargeCurrency) }}</span>
-							</div>
-							<hr>
-							<div class="d-flex justify-content-between">
-								<strong>{{ __('checkout.total') }}</strong>
-								<strong>{{ money($chargePrice, $chargeCurrency) }} {{ $chargeCurrency }}</strong>
-							</div>
-							@if($currencyFallback)
-								<p class="small text-muted mt-3 mb-0">{{ __('checkout.currency_fallback', ['selected' => app(\App\Services\CurrencyManager::class)->current(), 'currency' => $chargeCurrency]) }}</p>
-							@endif
-						</div>
-					</div>
 				</div>
 			</form>
 		</div>
