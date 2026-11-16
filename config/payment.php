@@ -116,6 +116,11 @@ return [
             'webhook_secret' => env('WHOP_WEBHOOK_SECRET'),
         ],
 
+        'mollie' => [
+            'currencies' => explode(',', env('MOLLIE_CURRENCIES', 'USD,CAD,EUR')),
+            'api_key'    => env('MOLLIE_API_KEY'),
+        ],
+
     ],
 
 ];

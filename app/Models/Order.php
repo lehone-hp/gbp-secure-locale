@@ -28,6 +28,7 @@ class Order extends Model
     const PAYMENT_GATEWAY_PAYUNIT = 'payunit';
     const PAYMENT_GATEWAY_SQUARE = 'square';
     const PAYMENT_GATEWAY_WHOP = 'whop';
+    const PAYMENT_GATEWAY_MOLLIE = 'mollie';
 
     const PAYMENT_GATEWAY_LABELS = [
         self::PAYMENT_GATEWAY_BRAINTREE => 'Braintree',
@@ -37,6 +38,7 @@ class Order extends Model
         self::PAYMENT_GATEWAY_PAYUNIT => 'PayUnit',
         self::PAYMENT_GATEWAY_SQUARE => 'Square',
         self::PAYMENT_GATEWAY_WHOP => 'Whop',
+        self::PAYMENT_GATEWAY_MOLLIE => 'Mollie',
     ];
 
     const PAYMENT_GATEWAY_VALUES = [
@@ -47,6 +49,7 @@ class Order extends Model
         self::PAYMENT_GATEWAY_PAYUNIT,
         self::PAYMENT_GATEWAY_SQUARE,
         self::PAYMENT_GATEWAY_WHOP,
+        self::PAYMENT_GATEWAY_MOLLIE,
     ];
 
     // Gateway types that both mean "PayPal" for UI/lookup purposes, differing

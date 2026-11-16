@@ -232,8 +232,8 @@ class CheckoutController extends Controller
                     ]);
                 }
 
-                // PayUnit: redirect to the hosted payment page
-                if ($order->payment_gateway === Order::PAYMENT_GATEWAY_PAYUNIT && isset($paymentResult['hosted_url'])) {
+                // PayUnit and Mollie: redirect to the hosted payment page
+                if (in_array($order->payment_gateway, [Order::PAYMENT_GATEWAY_PAYUNIT, Order::PAYMENT_GATEWAY_MOLLIE], true) && isset($paymentResult['hosted_url'])) {
                     return response()->json(['redirect_url' => $paymentResult['hosted_url']]);
                 }
 
@@ -338,6 +338,32 @@ class CheckoutController extends Controller
             return redirect()
                 ->route('checkout.cancel')
                 ->with('error', $paymentResult['error'] ?? __('messages.payment_failed'));
+        }
+
+        // For Mollie, check the payment on the buyer's return rather than waiting for the webhook
+        if ($order->payment_gateway === Order::PAYMENT_GATEWAY_MOLLIE && $order->payment_status === Order::PAYMENT_STATUS_PENDING && $order->payment_transaction_id) {
+            $payment = $this->paymentManager->driver($order->payment_gateway)
+                ->retrievePayment($order->payment_transaction_id);
+
+            if ($payment['status'] === 'paid') {
+                if ($order->markAsPaidIfPending($order->payment_transaction_id, $payment['response'])) {
+                    $this->sendOrderEmails($order);
+                }
+
+                return view('web.services.checkout-success', compact('order'))
+                    ->with('success', __('messages.payment_success'));
+            }
+
+            if (in_array($payment['status'], ['failed', 'canceled', 'expired'], true)) {
+                $order->markAsFailed($payment['response']);
+
+                return redirect()
+                    ->route('checkout.cancel')
+                    ->with('error', __('messages.payment_failed'));
+            }
+
+            return view('web.services.checkout-success', compact('order'))
+                ->with('info', __('messages.payment_processing'));
         }
 
         // Not paid and nothing to confirm: send the buyer back to the payment step

@@ -28,7 +28,7 @@ class CheckoutRequest extends FormRequest
             'payment_nonce' => 'required_if:payment_gateway,braintree',
             'payment_method_id' => 'required_if:payment_gateway,stripe',
             'payment_source_id' => 'required_if:payment_gateway,square',
-            'payment_gateway' => 'nullable|in:braintree,stripe,paypal,payunit,square,whop',
+            'payment_gateway' => 'nullable|in:braintree,stripe,paypal,payunit,square,whop,mollie',
         ];
     }
 }

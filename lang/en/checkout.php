@@ -63,6 +63,7 @@ return [
     // PayUnit-specific translations
     'whop_message' => 'You will pay securely by card or wallet on this page after clicking the button below.',
     'payunit_redirect_message' => 'You will be redirected to PayUnit to complete your payment securely using credit cards or other payment methods.',
+    'mollie_redirect_message' => 'You will be redirected to Mollie to complete your payment securely with the payment method of your choice.',
     'select_addon_first' => 'Please choose a service package first.',
     'order_not_payable' => 'This order can no longer be paid. Please start again.',
     'step_of' => 'Step :current of :total',

@@ -96,6 +96,12 @@
 											{{ __('checkout.payunit_redirect_message') }}
 										</div>
 									</div>
+								@elseif($paymentGateway === 'mollie')
+									<div id="mollie-message" class="mb-4">
+										<div class="alert alert-info">
+											{{ __('checkout.mollie_redirect_message') }}
+										</div>
+									</div>
 								@elseif($paymentGateway === 'whop')
 									<!-- Whop embedded checkout mounts here after the order is created -->
 									<div id="whop-message" class="alert alert-info">

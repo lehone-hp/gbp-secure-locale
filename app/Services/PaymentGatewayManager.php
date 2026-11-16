@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Contracts\PaymentGatewayInterface;
 use App\Models\Order;
 use App\Services\PaymentGateways\BraintreeGateway;
+use App\Services\PaymentGateways\MollieGateway;
 use App\Services\PaymentGateways\StripeGateway;
 use App\Services\PaymentGateways\PayPalGateway;
 use App\Services\PaymentGateways\PayUnitGateway;
@@ -32,6 +33,7 @@ class PaymentGatewayManager
             Order::PAYMENT_GATEWAY_PAYUNIT => app(PayUnitGateway::class),
             Order::PAYMENT_GATEWAY_SQUARE => app(SquareGateway::class),
             Order::PAYMENT_GATEWAY_WHOP => app(WhopGateway::class),
+            Order::PAYMENT_GATEWAY_MOLLIE => app(MollieGateway::class),
             default => throw new InvalidArgumentException("Payment gateway [{$gateway}] is not supported.")
         };
     }

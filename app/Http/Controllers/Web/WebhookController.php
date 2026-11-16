@@ -209,6 +209,40 @@ class WebhookController extends Controller
         }
     }
 
+    public function mollie(Request $request)
+    {
+        try {
+            $gateway = $this->paymentManager->driver(Order::PAYMENT_GATEWAY_MOLLIE);
+
+            if (!$gateway->verifyWebhook($request)) {
+                Log::error('Mollie webhook verification failed');
+                return response()->json(['error' => 'Invalid webhook'], 400);
+            }
+
+            // Mollie retries on any non-200 response, so unknown payments are acknowledged
+            $payment = $gateway->retrievePayment($request->input('id'));
+            $order = Order::find($payment['metadata']['order_id'] ?? null);
+
+            if (!$payment['success'] || !$order) {
+                return response()->json(['success' => true]);
+            }
+
+            if ($payment['status'] === 'paid') {
+                if ($order->markAsPaidIfPending($request->input('id'), $payment['response'])) {
+                    $this->sendOrderEmails($order);
+                }
+            } elseif (in_array($payment['status'], ['failed', 'canceled', 'expired'], true)
+                && $order->payment_status === Order::PAYMENT_STATUS_PENDING) {
+                $order->markAsFailed($payment['response']);
+            }
+
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            Log::error('Mollie webhook processing failed: ' . $e->getMessage());
+            return response()->json(['error' => 'Processing failed'], 500);
+        }
+    }
+
     public function square(Request $request)
     {
         try {

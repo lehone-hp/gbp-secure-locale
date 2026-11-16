@@ -58,6 +58,7 @@ Route::post('/webhooks/paypal2', [WebhookController::class, 'paypal2'])->name('w
 Route::post('/webhooks/payunit', [WebhookController::class, 'payunit'])->name('webhooks.payunit');
 Route::post('/webhooks/square', [WebhookController::class, 'square'])->name('webhooks.square');
 Route::post('/webhooks/whop', [WebhookController::class, 'whop'])->name('webhooks.whop');
+Route::post('/webhooks/mollie', [WebhookController::class, 'mollie'])->name('webhooks.mollie');
 
 // Customer account
 Route::prefix('account')->group(function () {

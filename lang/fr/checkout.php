@@ -63,6 +63,7 @@ return [
     // Traductions spécifiques à PayUnit
     'whop_message' => 'Vous paierez en toute sécurité par carte ou portefeuille électronique sur cette page après avoir cliqué sur le bouton ci-dessous.',
     'payunit_redirect_message' => 'Vous serez redirigé vers PayUnit pour finaliser votre paiement en toute sécurité via cartes bancaires ou autres moyens de paiement.',
+    'mollie_redirect_message' => 'Vous serez redirigé vers Mollie pour finaliser votre paiement en toute sécurité avec le moyen de paiement de votre choix.',
     'select_addon_first' => "Veuillez d'abord choisir une offre.",
     'order_not_payable' => 'Cette commande ne peut plus être payée. Veuillez recommencer.',
     'step_of' => 'Étape :current sur :total',
