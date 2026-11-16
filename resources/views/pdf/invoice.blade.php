@@ -320,7 +320,7 @@
                     @endif--}}
                 </td>
                 <td class="td-amount">
-                    {{ $currencySymbol }}{{ number_format((float)$item->subtotal, 2, ',', '&nbsp;') }}
+                    {{ $currencySymbol }}{{ number_format((float)$item->subtotal, 2, ',', "\u{00A0}") }}
                 </td>
             </tr>
             @endforeach
@@ -336,7 +336,7 @@
                     <tr>
                         <td class="tot-label">Sous-total HT</td>
                         <td class="tot-value">
-                            {{ $currencySymbol }}{{ number_format($subtotalHT, 2, ',', '&nbsp;') }}
+                            {{ $currencySymbol }}{{ number_format($subtotalHT, 2, ',', "\u{00A0}") }}
                         </td>
                     </tr>
                     <tr>
@@ -344,13 +344,13 @@
                             {{ $taxLabel }} ({{ (int)round($taxRate * 100) }}%)
                         </td>
                         <td class="tot-value">
-                            {{ $currencySymbol }}{{ number_format($tvaAmount, 2, ',', '&nbsp;') }}
+                            {{ $currencySymbol }}{{ number_format($tvaAmount, 2, ',', "\u{00A0}") }}
                         </td>
                     </tr>
                     <tr>
                         <td class="tot-label-bold">Total TTC</td>
                         <td class="tot-value-bold">
-                            {{ $currencySymbol }}{{ number_format($totalTTC, 2, ',', '&nbsp;') }}
+                            {{ $currencySymbol }}{{ number_format($totalTTC, 2, ',', "\u{00A0}") }}
                         </td>
                     </tr>
                     <tr>
@@ -359,7 +359,7 @@
                                 <tr>
                                     <td class="tot-general-label">Total G&#xe9;n&#xe9;ral</td>
                                     <td class="tot-general-value">
-                                        {{ $currencySymbol }}{{ number_format($totalTTC, 2, ',', '&nbsp;') }}
+                                        {{ $currencySymbol }}{{ number_format($totalTTC, 2, ',', "\u{00A0}") }}
                                     </td>
                                 </tr>
                             </table>
@@ -391,12 +391,12 @@
                                  style="height:48px; display:block;">
                         </td>
                         @endif
-                        @if($stamp)
+                        {{--@if($stamp)
                         <td style="vertical-align:middle;">
                             <img src="{{ $stamp }}" alt="Cachet officiel"
                                  style="height:78px; display:block; opacity:0.88;">
                         </td>
-                        @endif
+                        @endif--}}
                     </tr>
                 </table>
             </td>
