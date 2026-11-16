@@ -10,7 +10,7 @@ return [
         'address_line_1' => env('INVOICE_ADDRESS_1', '8 Rue de Londres, 75009'),
         'address_line_2' => env('INVOICE_ADDRESS_2', 'Paris, France'),
         'country'        => env('INVOICE_COUNTRY', 'France'),
-        'email'          => env('INVOICE_EMAIL', 'info@gbp-securelocal.com'),
+        'email'          => env('INVOICE_EMAIL', 'contact@gbp-securelocal.com'),
         'website'        => env('INVOICE_WEBSITE', 'www.gbp-securelocal.com'),
     ],
 

@@ -21,7 +21,7 @@ class SettingSeeder extends Seeder
             'app_name' => 'GBP Secure Local',
 
             'contact_email'   => 'support@gbp-securelocal.com',
-            'contact_email_2' => 'info@gbp-securelocal.com',
+            'contact_email_2' => 'contact@gbp-securelocal.com',
             'contact_phone'   => '(237) 123-456-789',
             'contact_phone_2' => '(237) 123-456-789',
 

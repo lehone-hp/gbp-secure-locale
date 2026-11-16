@@ -577,3 +577,6 @@ select.form-control {
 
 /* Preloader uses the brand mark */
 #loading-icon img{display:block;width:40px;height:40px}
+
+/* Preloader must sit above Bootstrap sticky/fixed layers (sticky-top is 1020) */
+.preloader{z-index:9999}
