@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Order;
 use App\Http\Controllers\Controller;
 use App\Mail\OrderConfirmation;
 use App\Models\Order;
+use App\Services\ContractService;
 use App\Services\InvoiceService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -67,6 +68,16 @@ class OrderController extends Controller
         return response($invoices->generate($order), 200, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'attachment; filename="'.$invoices->filename($order).'"',
+        ]);
+    }
+
+    public function contract(Order $order, ContractService $contracts)
+    {
+        abort_unless($order->payment_status === Order::PAYMENT_STATUS_PAID, 404);
+
+        return response($contracts->generate($order), 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename="'.$contracts->filename($order).'"',
         ]);
     }
 

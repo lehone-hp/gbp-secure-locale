@@ -16,6 +16,9 @@
                     <a href="{{ route('admin.orders.invoice', $order) }}" class="btn btn-success mr-2">
                         <i class="mdi mdi-download"></i> Download Invoice PDF
                     </a>
+                    <a href="{{ route('admin.orders.contract', $order) }}" class="btn btn-success mr-2">
+                        <i class="mdi mdi-file-document-outline"></i> Download Contract PDF
+                    </a>
                     @endif
                     <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary">
                         <i class="mdi mdi-arrow-left"></i> Back to Orders

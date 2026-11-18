@@ -56,6 +56,13 @@
                     </a>
                 </li>
 
+                <li class="{{ Request::is('admin/contract-template*') ? 'menuitem-active' : '' }}">
+                    <a href="{{ route('admin.contract-template.edit') }}">
+                        <i data-feather="file-text"></i>
+                        <span>Contract Template</span>
+                    </a>
+                </li>
+
                 <li class="{{ Request::is('admin/profile*') ? 'menuitem-active' : '' }}">
                     <a href="{{route('admin.profile')}}">
                         <i data-feather="user"></i>

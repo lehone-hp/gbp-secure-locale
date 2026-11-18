@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Auth\LoginController as AdminLoginController;
 use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Faq\FaqController;
+use App\Http\Controllers\Admin\ContractTemplateController;
 use App\Http\Controllers\Admin\Order\OrderController;
 use App\Http\Controllers\Admin\Page\PageController;
 use App\Http\Controllers\Admin\Profile\ProfileController as AdminProfileController;
@@ -184,6 +185,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
         Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
         Route::get('orders/{order}/invoice', [OrderController::class, 'invoice'])->name('orders.invoice');
+        Route::get('orders/{order}/contract', [OrderController::class, 'contract'])->name('orders.contract');
+        Route::get('contract-template', [ContractTemplateController::class, 'edit'])->name('contract-template.edit');
+        Route::put('contract-template', [ContractTemplateController::class, 'update'])->name('contract-template.update');
+        Route::put('contract-template/preview', [ContractTemplateController::class, 'preview'])->name('contract-template.preview');
+        Route::post('contract-template/{template}/restore', [ContractTemplateController::class, 'restore'])->name('contract-template.restore');
         Route::post('orders/{order}/resend-email', [OrderController::class, 'resendEmail'])->name('orders.resend-email');
 
         // Achievements
