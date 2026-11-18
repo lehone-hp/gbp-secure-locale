@@ -60,6 +60,16 @@ class OrderController extends Controller
         return view('admin.orders.show', compact('order', 'invoiceNumber'));
     }
 
+    public function invoice(Order $order, InvoiceService $invoices)
+    {
+        abort_unless($order->payment_status === Order::PAYMENT_STATUS_PAID, 404);
+
+        return response($invoices->generate($order), 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename="'.$invoices->filename($order).'"',
+        ]);
+    }
+
     public function resendEmail(Request $request, Order $order)
     {
         $request->validate([

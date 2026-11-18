@@ -127,6 +127,12 @@
                                                class="btn btn-sm btn-info">
                                                 <i class="mdi mdi-eye"></i> View
                                             </a>
+                                            @if($order->payment_status === 'paid')
+                                                <a href="{{ route('admin.orders.invoice', $order->id) }}"
+                                                   class="btn btn-sm btn-success" title="Download Invoice PDF">
+                                                    <i class="mdi mdi-download"></i>
+                                                </a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty

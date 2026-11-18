@@ -183,6 +183,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         // Orders
         Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
         Route::get('orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+        Route::get('orders/{order}/invoice', [OrderController::class, 'invoice'])->name('orders.invoice');
         Route::post('orders/{order}/resend-email', [OrderController::class, 'resendEmail'])->name('orders.resend-email');
 
         // Achievements
